@@ -36,6 +36,10 @@
     <button (click)="addChocChip()">add</button>
     <button (click)="removeChocChip()">remove</button>
   </div>
+  <div class="form-group mb-1">
+    <p class="font-weight-light mb-0">Delete Cookie: </p>
+    <button (click)="removeCookie()">remove</button>
+  </div>
 </div>
 <div class="container mb-2" *ngIf="cookieList[0]">
   <h3>

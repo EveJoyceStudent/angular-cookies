@@ -13,28 +13,35 @@ export class CookieControllerComponent implements OnInit {
   public Colours = Colours;
   newCookieType: string = 'Cookie';
   newCookieName: string = 'new cookie name';
-  cookieSelected: Cookie=new Cookie("");
+  cookieSelected: Cookie = new Cookie('');
   newCookieColour = this.cookieSelected.colour;
 
-  cookieList: Cookie[]=[];
+  cookieList: Cookie[] = [];
 
-  addChocChip(){
+  addChocChip() {
     this.cookieSelected.chocolateChipNum++;
   }
-  removeChocChip(){
+  removeChocChip() {
     this.cookieSelected.chocolateChipNum--;
   }
 
-  newCookie(){
-    if(this.newCookieType==='Cookie'){
+  removeCookie() {
+    let deleteIndex = this.cookieList.indexOf(this.cookieSelected);
+    this.cookieList.splice(deleteIndex, 1);
+    if (this.cookieList.length > 0) {
+      this.cookieSelected = this.cookieList[deleteIndex - 1];
+    }
+  }
+
+  newCookie() {
+    if (this.newCookieType === 'Cookie') {
       this.cookieList.push(new Cookie(this.newCookieName));
     } else {
       this.cookieList.push(new SprinkleCookie(this.newCookieName));
     }
-    if(this.cookieList.length===1){
-      this.cookieSelected=this.cookieList[0];
+    if (this.cookieList.length === 1) {
+      this.cookieSelected = this.cookieList[0];
     }
-
   }
 
   constructor() {}
