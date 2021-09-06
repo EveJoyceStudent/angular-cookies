@@ -6,8 +6,8 @@
 
   <div id="cookieList" *ngIf="cookieList[0]!==undefined">
     <div *ngFor="let cookie of cookieList" class="cookie" [style.background-color]="cookie.colour">
-      <!-- <div *ngIf="(SprinkleCookie)cookie.sprinkleColour">test</div> -->
-      {{cookie.chocolateChipNum}}
+      <div *ngIf="cookie.sprinkleColour!==undefined" class="sprinkle">{{cookie.chocolateChipNum}}</div>
+      <div *ngIf="cookie.sprinkleColour===undefined">{{cookie.chocolateChipNum}}</div>
     </div>
   </div>
 </div>

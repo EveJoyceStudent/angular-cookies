@@ -12,12 +12,14 @@ import { BrowserModule } from '@angular/platform-browser';
 })
 export class AppComponent implements OnInit {
   public Colours = Colours;
-  cookieList:Cookie[];
+  cookieList: any = [];
   cookieSelected:Cookie;
 
-  
+  ListCookies(){
+    console.log('this ',this.cookieList);
+  }
 
-  addCookie(newCook:Cookie){
+  addCookie(newCook:Cookie|SprinkleCookie){
     console.log(newCook);
     this.cookieList.push({...newCook});
     if(this.cookieList.length === 1){

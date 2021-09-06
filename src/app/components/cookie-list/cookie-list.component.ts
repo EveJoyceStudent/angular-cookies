@@ -11,7 +11,7 @@ import { BrowserModule } from '@angular/platform-browser';
   styleUrls: ['./cookie-list.component.css']
 })
 export class CookieListComponent implements OnInit {
-  @Input() cookieList:Cookie[];
+  @Input() cookieList:any;
 
   constructor() { }
 

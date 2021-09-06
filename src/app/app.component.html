@@ -5,6 +5,8 @@
 
   <add-cookie (createEvent)="addCookie($event)"></add-cookie>
 
+  <!-- <button (click)=ListCookies()>Log Cookies</button> -->
+
   <cookie-selector *ngIf="cookieList.length > 0" [cookieList]="cookieList" [cookieSelected]="cookieSelected">
   </cookie-selector>
 
