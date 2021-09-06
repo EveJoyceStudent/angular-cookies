@@ -1,6 +1,4 @@
-/* NO LONGER USED */
-
-<div class="container mb-2" *ngIf="cookieList[0]">
+<div class="container mb-2">
   <h3>
     edit a cookie
   </h3>
@@ -24,17 +22,5 @@
   <div class="form-group mb-1">
     <p class="font-weight-light mb-0">Delete Cookie: </p>
     <button (click)="removeCookie()">remove</button>
-  </div>
-</div>
-<div class="container mb-2">
-  <h3>
-    cookie list
-  </h3>
-  <h5 *ngIf="!cookieList[0]">no cookies here!</h5>
-
-  <div id="cookieList" *ngIf="cookieList[0]">
-    <div *ngFor="let cookie of cookieList" class="cookie" [style.background-color]="cookie.colour" [class.sprinkle]="">
-      {{cookie.chocolateChipNum}}
-    </div>
   </div>
 </div>

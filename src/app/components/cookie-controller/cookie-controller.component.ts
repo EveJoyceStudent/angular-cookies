@@ -1,8 +1,9 @@
+/* NO LONGER USED */
+
 import { Component, OnInit } from '@angular/core';
 import { Cookie } from '../../models/cookie.model';
 import { SprinkleCookie } from '../../models/sprinkle.model';
 import { Colours } from '../../models/colours.enum';
-import { KeyValue } from '@angular/common';
 
 @Component({
   selector: 'cookieController',
@@ -11,10 +12,10 @@ import { KeyValue } from '@angular/common';
 })
 export class CookieControllerComponent implements OnInit {
   public Colours = Colours;
-  newCookieType: string = 'Cookie';
-  newCookieName: string = 'new cookie name';
-  cookieSelected: Cookie = new Cookie('');
-  newCookieColour = this.cookieSelected.colour;
+  newCookieType: string;
+  newCookieName: string;
+  cookieSelected: Cookie;
+  newCookieColour: Colours;
 
   cookieList: Cookie[] = [];
 
@@ -46,5 +47,10 @@ export class CookieControllerComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.newCookieType = 'Cookie';
+    this.newCookieName = 'new cookie name';
+    this.cookieSelected = new Cookie('');
+    this.newCookieColour = this.cookieSelected.colour;
+  }
 }
